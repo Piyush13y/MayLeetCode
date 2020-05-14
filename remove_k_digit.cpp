@@ -19,6 +19,7 @@ Example 3:
 Input: num = "10", k = 2
 Output: "0"
 Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+
 */
 
 int x = [](){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);return 0;}();
