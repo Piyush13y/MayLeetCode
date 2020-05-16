@@ -45,14 +45,10 @@ class Solution {
 public:
     int n = 0;
     int maxSubarraySumCircular(vector<int>& a) {
-        // Case 1: get the maximum sum using standard kadane'  
-    // s algorithm  
         n = a.size();
         int allNeg = 1, maxi = INT_MIN;
     for (int i = 0; i < n; i++)  
     {  
-            //max_wrap += a[i]; // Calculate array-sum  
-            //a[i] = -a[i]; // invert the array (change sign)  
         maxi = max(a[i], maxi);
         if(a[i] >= 0){
             allNeg = 0;
@@ -63,26 +59,17 @@ public:
         if(allNeg)
             return maxi;
     int max_kadane = kadane(a, n);  
-      
-    // Case 2: Now find the maximum sum that includes  
-    // corner elements.  
+  
     int max_wrap = 0, i;  
     for (i = 0; i < n; i++)  
     {  
-            max_wrap += a[i]; // Calculate array-sum  
-            a[i] = -a[i]; // invert the array (change sign)  
+            max_wrap += a[i];   
+            a[i] = -a[i]; 
     }  
-      
-    // max sum with corner elements will be:  
-    // array-sum - (-max subarray sum of inverted array)  
     max_wrap = max_wrap + kadane(a, n);  
-      
-    // The maximum circular sum will be maximum of two sums  
     return (max_wrap > max_kadane)? max_wrap: max_kadane;  
 }  
-  
-// Standard Kadane's algorithm to find maximum subarray sum  
-// See https://www.geeksforgeeks.org/archives/576 for details  
+ 
 int kadane(vector<int> a, int n)  
 {  
     int max_so_far = 0, max_ending_here = 0;  
