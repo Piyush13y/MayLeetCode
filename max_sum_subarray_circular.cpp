@@ -39,6 +39,7 @@ Note:
 -30000 <= A[i] <= 30000
 1 <= A.length <= 30000
 */
+int x = [](){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);return 0;}();
 
 class Solution {
 public:
