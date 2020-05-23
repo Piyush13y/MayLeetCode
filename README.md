@@ -1,4 +1,4 @@
-# May LeetCoding Challenge
+# May LeetCoding Challenge 2020
 
 The repository contains everyday's solution for the LeetCode challenge.
 
